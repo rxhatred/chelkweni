@@ -48,7 +48,7 @@ export class SubjectViewComponent implements OnInit {
   }
 
   addSubjectToStudent(sub : Subject): void {
-    this.subjservice.addForEnrollment(sub);
+    //this.subjservice.addForEnrollment(sub);
   }
 
   isAdded(id: number): boolean {

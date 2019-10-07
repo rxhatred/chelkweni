@@ -80,7 +80,7 @@ export class EnrollmentComponent implements OnInit {
 
   getTotalUnits(data: Enrollment): number {
     let totalUnits = 0;
-    data.subject.forEach(e => totalUnits += parseInt(e.subUnit.toString()));
+    //data.subject.forEach(e => totalUnits += parseInt(e.subUnit.toString()));
     return totalUnits;
   }
 

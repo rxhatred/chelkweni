@@ -10,7 +10,7 @@ export class StudentDbService {
 
   constructor(private http:HttpClient) { }
 
-  base_url : string = 'http://localhost:3000/student';
+  base_url : string = 'http://localhost:3000/student/';
 
   getStudents(): Observable<StudentDB[]> {
     return this.http.get<StudentDB[]>(this.base_url);
