@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "subject-view.component.scss"
+    ],
+    "names": [],
+    "file": "subject-view.component.css"
+}

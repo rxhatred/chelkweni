@@ -1,0 +1,29 @@
+<b> {{ title }}  </b>
+
+<div class="detailedView">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Subject ID#</th>
+          <th scope="col">Subject Code</th>
+          <th scope="col">Subject Description</th>
+          <th scope="col">Room#</th>
+          <th scope="col">Units</th>
+          <th scope="col">Operations</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sub of subjects, let i=index ">
+          <td>{{ sub._id }}</td>
+          <td>{{ sub.subjectCode}}</td>
+          <td>{{ sub.subjectDescription}}</td>
+          <td>{{ sub.room}}</td>
+          <td>{{ sub.units}}</td>
+          <td  *ngIf="isAdminLevel"><button class="btn btn-dark" (click)="deleteSubject(sub._id)" >Delete</button> <button class="btn btn-secondary" (click)="updateSubject(sub)">Update</button></td>
+          <td *ngIf="!isAdminLevel"><button [disabled]="isAdded(sub.subId)" class="btn btn-success" (click)="addSubjectToStudent(sub)">Add</button></td> 
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
