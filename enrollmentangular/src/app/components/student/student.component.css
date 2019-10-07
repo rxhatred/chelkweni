@@ -1,0 +1,11 @@
+.main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 70%;
+      grid-template-columns: 30% 70%;
+  margin-top: 35px;
+  -webkit-column-gap: 25px;
+          column-gap: 25px;
+  padding: 45px;
+}
+/*# sourceMappingURL=student.component.css.map */

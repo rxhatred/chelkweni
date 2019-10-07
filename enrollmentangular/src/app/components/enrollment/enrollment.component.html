@@ -1,0 +1,97 @@
+
+<div class="main">
+        <div class="studentEntry">
+          <div class="entry">
+            <b>Search Student ID</b>
+            <form>
+              <div class="form-group">
+                <label for="studentID">ID #</label>
+                <input
+                  type="email"
+                  #txtVal
+                  class="form-control"
+                  name="id"
+                  aria-describedby="emailHelp"
+                  placeholder=" ID Number"
+                  (keydown.enter)="searchStudent(txtVal.value)"
+                />
+              </div>
+      
+              <div class="form-group">
+                <label for="studentFname">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="fullName"
+                  placeholder=" Full Name"
+                  [(ngModel)]="name"
+                  disabled
+                />
+              </div>
+      
+              <div class="form-group">
+                <label for="studentEmail">Email</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="emailAdd"
+                  placeholder=" Email Address"
+                  [(ngModel)]="email"
+                  disabled
+                />
+              </div>
+      
+            </form>
+          </div>
+        </div>
+      
+        <div class="showSubjects">
+          <div class="tableOfSubjects">
+            <b>Subjects Available</b>
+            <app-subject-view [title]="title" [isAdminLevel]="false"></app-subject-view>
+            <button [disabled]="lockedEnrollment" class="btn btn-outline-success" (click)="enrollStudent()">Enroll Student</button>
+          
+          </div>
+        </div>
+      </div>
+
+      <div class="enrollmentView">
+          <!-- <b> Enrollment Form</b> -->
+          
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Student ID#</th>
+                  <th scope="col">Student Full name</th>
+                  <th scope="col">Email Address</th>
+                  <th scope="col">Subject Code</th>
+                  <th scope="col">Subject Description</th>
+                  <th scope="col">Room</th>
+                  <th scope="col">Units</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let en of enrolledLists, let i=index ">
+                  <td>{{ en.student.id}}</td>
+                  <td>{{ en.student.fullName}}</td>
+                  <td>{{ en.student.emailAdd}}</td>
+                  <td>
+                    <table>
+                      <tr *ngFor="let s of en.subject"><td class="no-border-top">{{s.subCode}}</td></tr>  
+                    </table>
+                  </td>
+                  <td>
+                    <table>
+                      <tr *ngFor="let s of en.subject"><td class="no-border-top">{{ s.subDesc}}</td></tr>  
+                    </table>
+                  </td>
+                  <td>
+                    <table>
+                      <tr *ngFor="let s of en.subject"><td class="no-border-top">{{ s.subRoom}}</td></tr>  
+                    </table>
+                  </td>
+                  <td>{{ getTotalUnits(en)}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
