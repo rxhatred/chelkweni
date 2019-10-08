@@ -28,6 +28,10 @@ export class StudentDbService {
       });
  }
 
+  getStudentByQueryString(query: string): Observable<StudentDB[]> {
+    return this.http.get<StudentDB[]>(this.base_url+"searchbyquery/"+query);
+  }
+
   deleteStudent(id: String) {
     return this.http.delete(this.base_url+id);
   }

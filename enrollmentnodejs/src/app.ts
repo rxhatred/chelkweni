@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 //Student
 app.get('/student',studentController.allStudents);
 app.get('/student/:id', studentController.getStudent);
+app.get('/student/searchbyquery/:query', studentController.getStudentsByQuery);
 app.post('/student', studentController.addStudent);
 app.delete('/student/:id', studentController.deleteStudent);
 app.put('/student/:id', studentController.updateStudent);

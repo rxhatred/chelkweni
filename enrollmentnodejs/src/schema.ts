@@ -32,5 +32,5 @@ export const EnrollmentSchema = new mongoose.Schema({
 const Student = mongoose.model('Student', StudentSchema);
 const Subject = mongoose.model('Subject', SubjectSchema);
 const Enrollment = mongoose.model('Enrollment', EnrollmentSchema);
-export { Student,Subject };
+export { Student,Subject, Enrollment };
 

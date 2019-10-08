@@ -23,6 +23,13 @@ export let getStudent = (req: Request, res: Response) => {
     });
 };
 
+export let getStudentsByQuery = (req: Request, res: Response) => {
+    var query = { fullName : req.params.query }
+    Student.find(query, (err, data) => {
+      res.send(data);
+    })
+}
+
   // - POST - /student # inserts a new student into the table
 export let addStudent = (req: Request, res: Response) => {
     let student = new Student(req.body);
