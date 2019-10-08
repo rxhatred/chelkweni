@@ -24,8 +24,7 @@ export let getStudent = (req: Request, res: Response) => {
 };
 
 export let getStudentsByQuery = (req: Request, res: Response) => {
-    var query = { fullName : req.params.query }
-    Student.find(query, (err, data) => {
+    Student.find({ fullName: {$regex : "^" + req.params.query}}, (err, data) => {
       res.send(data);
     })
 }
